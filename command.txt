@@ -1,0 +1,14 @@
+1. Lọc các dòng failed password
+grep "Failed password" /var/log/auth.log
+
+2. Đếm tổng số lần login fail
+grep "Failed password" /var/log/auth.log | wc -l
+
+3. Lấy danh sách IP tấn công và số lần thử
+grep "Failed password" /var/log/auth.log | awk '{print $11}' | sort | uniq -c | sort -nr
+
+4. Xem thời điểm bắt đầu tấn công
+grep "Failed password" /var/log/auth.log | head
+
+5. Xem thời điểm kết thúc tấn công
+grep "Failed password" /var/log/auth.log | tail
