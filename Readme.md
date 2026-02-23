@@ -8,7 +8,10 @@ Detect SSH brute-force attack via auth.log.
 - Kali Linux
 
 ## Attack
-hydra -l user -P rockyou.txt ssh://IP
+hydra -l user -P rockyou.txt ssh://IP_victim
+
+## victim 
+cat /var/log/auth.log
 
 ## Analyst Tasks
 - Find attacker IP
